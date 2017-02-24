@@ -13,15 +13,17 @@ public class Business {
 	private String name;
 	private String url;
 	private String phoneNumber;
+	private Long businessTypeId;
 
 	public Business() {
 	}
 
-	public Business(String name, String url, String phoneNumber) {
+	public Business(String name, String url, String phoneNumber, long businessTypeId) {
 		super();
 		this.name = name;
 		this.url = url;
 		this.phoneNumber = phoneNumber;
+		this.businessTypeId = businessTypeId;
 	}
 
 	public Long getId() {
@@ -32,6 +34,14 @@ public class Business {
 		this.id = id;
 	}
 
+	public Long getbusinessTypeId() {
+		return businessTypeId;
+	}
+
+	public void setbusinessTypeId(Long businessTypeId) {
+		this.businessTypeId = businessTypeId;
+	}
+	
 	public String getName() {
 		return name;
 	}

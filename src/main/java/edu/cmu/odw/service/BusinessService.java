@@ -4,8 +4,5 @@ import org.springframework.data.repository.CrudRepository;
 import edu.cmu.odw.model.Business;
 
 
-public interface BusinessService extends CrudRepository<Business, Long> {
-
-	public Business findByName(String name);
-	
+public interface BusinessService extends CrudRepository<Business, Long> , BusinessServiceCustom{	
 }

@@ -25,9 +25,14 @@ public class BusinessController {
 		return businessService.findOne(id);
 	}
 	
+	@RequestMapping(value = "/api/business/type/{id}")
+	public Iterable<Business> businessType(@PathVariable("id") long id) {
+		return businessService.findByBusinessTypeId(id);
+	}
+	
 	@RequestMapping(value = "/api/business/byname")
 	@ResponseBody
-	public Business comment(@RequestParam("name") String name) {
+	public Iterable<Business> comment(@RequestParam("name") String name) {
 		
 		return businessService.findByName(name);
 	}
