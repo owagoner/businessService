@@ -25,6 +25,11 @@ public class BusinessController {
 		return businessService.findOne(id);
 	}
 	
+	@RequestMapping(value = "/api/business/random/{id}")
+	public Iterable<Business> businessRandomN(@PathVariable("id") int n) {
+		return businessService.getRandomNBusinesses(n);
+	}
+	
 	@RequestMapping(value = "/api/business/type/{id}")
 	public Iterable<Business> businessType(@PathVariable("id") long id) {
 		return businessService.findByBusinessTypeId(id);
@@ -32,13 +37,13 @@ public class BusinessController {
 	
 	@RequestMapping(value = "/api/business/byname")
 	@ResponseBody
-	public Iterable<Business> comment(@RequestParam("name") String name) {
+	public Iterable<Business> business(@RequestParam("name") String name) {
 		
 		return businessService.findByName(name);
 	}
 	
 	@RequestMapping(value = "/api/business", method = RequestMethod.POST)
-	public Business saveComment(@RequestBody Business business) {
+	public Business saveBusiness(@RequestBody Business business) {
 		System.out.println(business);		
 		
 		return businessService.save(business);

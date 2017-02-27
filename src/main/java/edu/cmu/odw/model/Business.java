@@ -14,16 +14,18 @@ public class Business {
 	private String url;
 	private String phoneNumber;
 	private Long businessTypeId;
+	private String description;
 
 	public Business() {
 	}
 
-	public Business(String name, String url, String phoneNumber, long businessTypeId) {
+	public Business(String name, String url, String phoneNumber, long businessTypeId, String description) {
 		super();
 		this.name = name;
 		this.url = url;
 		this.phoneNumber = phoneNumber;
 		this.businessTypeId = businessTypeId;
+		this.description = description;
 	}
 
 	public Long getId() {
@@ -70,5 +72,13 @@ public class Business {
 	public String toString() {
 		return "Business[id=" + this.id + ", name=" + this.name + ", url=" + this.url + ", phonenumber="
 				+ this.phoneNumber + "]";
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 }
