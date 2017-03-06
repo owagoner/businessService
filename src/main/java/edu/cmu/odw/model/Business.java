@@ -15,17 +15,21 @@ public class Business {
 	private String phoneNumber;
 	private Long businessTypeId;
 	private String description;
+	private String twitterHandle;
+	private String businessHours;
 
 	public Business() {
 	}
 
-	public Business(String name, String url, String phoneNumber, long businessTypeId, String description) {
+	public Business(String name, String businessHours, String url, String phoneNumber, long businessTypeId, String description, String twitterHandle) {
 		super();
 		this.name = name;
 		this.url = url;
 		this.phoneNumber = phoneNumber;
 		this.businessTypeId = businessTypeId;
 		this.description = description;
+		this.twitterHandle = twitterHandle;
+		this.setBusinessHours(businessHours);
 	}
 
 	public Long getId() {
@@ -80,5 +84,21 @@ public class Business {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public String getTwitterHandle() {
+		return twitterHandle;
+	}
+
+	public void setTwitterHandle(String twitterHandle) {
+		this.twitterHandle = twitterHandle;
+	}
+
+	public String getBusinessHours() {
+		return businessHours;
+	}
+
+	public void setBusinessHours(String businessHours) {
+		this.businessHours = businessHours;
 	}
 }
